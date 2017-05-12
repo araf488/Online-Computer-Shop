@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>PC-Shopping Cart</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <div id="headerZone">
+                <a href="home.xhtml"><div class="logo"></div></a>
+                <div class="box1">
+                    <h2>Type of Products</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Desktop</a></li>
+                            <li>- <a href="product.xhtml">Laptop</a></li>
+                            <li>- <a href="product.xhtml">Mobile &amp; Tablet</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box2">
+                    <h2>Computer Accessories</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Monitor</a></li>
+                            <li>- <a href="product.xhtml">Motherboard</a></li>
+                            <li>- <a href="product.xhtml">Mouse &amp; Keyboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box3">
+                    <h2>Help &amp; Support</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="service.xhtml">Service</a></li>
+                            <li>- <a href="contact.xhtml">Contact</a></li>  
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box4">
+                    <h2>Logout</h2>
+                    <div class="headerText">
+                        <h:form>
+                            <p:commandLink action="#{accessMB.logout()}" value="Logout" ajax="false"/><br/><br/>
+                            <p:clock autoSync="true"/>
+                        </h:form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="productContainer2">
+                <div class="proBox1">
+                    <h3>Shopping<span class="wel"> Cart </span></h3>
+                </div>
+                <div class="productzone">
+                    <h:form id="form">
+                        <p:dataTable var="cart" value="#{shoppingCart.cart}" rows="10" >
+                            <f:facet name="header">
+                                <p:outputLabel value="Your Cart"/>
+                            </f:facet>
+                            <p:column headerText="Product Name">
+                                <p:outputLabel value="#{cart.p.proName}" />
+                            </p:column>
+                            <p:column headerText="Quantity">
+                                <p:inputText value="#{cart.quantity}"  style="width: 20px"/>
+                            </p:column>
+                            <p:column headerText="Price">
+                                <p:outputLabel value="#{cart.p.proPrice} Tk" />
+                            </p:column>
+                            <p:column headerText="Image">
+                                <h:graphicImage name="#{cart.p.proUrl}" library="images" width="50" height="60"/>
+                            </p:column>
+                            <p:column headerText="Delete">
+                                <h:commandButton value="Delete" action="#{shoppingCart.removeCart(cart)}" />
+                            </p:column>
+                            <f:facet name="footer">
+                                Total: <h:outputLabel value="#{shoppingCart.total} Tk" />
+                            </f:facet>
+                        </p:dataTable>
+                        <p:commandButton value="Update" action="#{shoppingCart.updateCart()}" ajax="false" />
+                        <p:commandButton value="Continue Shopping" action="product.xhtml"></p:commandButton>
+                        <p:commandButton value="Payment" action="success.xhtml"></p:commandButton>
+            <!--            <p:commandButton value="Process Cart" action="#{shoppingCart.payment()}" ajax="false"></p:commandButton>-->
+                    </h:form>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="footer">
+            <div class="footerMenu">
+                <ul style="color:#FFF;">
+                    &copy; Copyright @PC Computer Shop. All rights reserved. Design by Stylish <a href="#" style="color:#FFF; text-decoration:underline;">PC Computer Shop</a>.
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </h:head>
+    <h:body>
+        <!--        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_cart"/>
+                    <input type="hidden" name="upload" value="1"/>
+                    <c:set var="dem" value="1"/>
+                    <c:forEach items="#{shoppingCart.cart}" var="i">
+                        <input type="hidden" name="item_number_#{dem}" value="#{i.p.proId}"/>
+                        <input type="hidden" name="item_name_#{dem}" value="#{i.p.proName}"/>
+                        <input type="hidden" name="quantity_#{dem}" value="#{i.quantity}"/>
+                        <input type="hidden" name="amount_#{dem}" value="#{i.p.proPrice}"/>
+                        <c:set var="dem" value="#{dem+1}"/>
+                    </c:forEach>
+                    <input type="hidden" name="business" value="business1_so@gmail.com"/>
+                    <input type="hidden" name="return" value="http://localhost:8081/Online_Shopping/success.xhtml"/>
+                    <input type="hidden" name="cancel" value="http://localhost:8081/Online_Shopping/fail.xhtml"/>
+                    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                           alt="PayPal - The safer, easier way to pay online"/>
+                </form>-->
+        <h:form>
+            <p:commandButton action="sucess.xhtml" value="Payment"/>
+        </h:form>
+    </h:body>
+</html>
+
+
+

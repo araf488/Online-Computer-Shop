@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>PC-Product</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+            .product{
+                width: 150px;
+                height: 200px;
+                float: left;
+                margin-right: 10px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <div id="headerZone">
+                <a href="home.xhtml"><div class="logo"></div></a>
+                <div class="box1">
+                    <h2>Type of Products</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Desktop</a></li>
+                            <li>- <a href="product.xhtml">Laptop</a></li>
+                            <li>- <a href="product.xhtml">Mobile &amp; Tablet</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box2">
+                    <h2>Computer Accessories</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Monitor</a></li>
+                            <li>- <a href="product.xhtml">Motherboard</a></li>
+                            <li>- <a href="product.xhtml">Mouse &amp; Keyboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box3">
+                    <h2>Help &amp; Support</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="service.xhtml">Service</a></li>
+                            <li>- <a href="contact.xhtml">Contact</a></li>  
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box4">
+                    <h2>Logout</h2>
+                    <div class="headerText">
+                        <h:form>
+                            <p:commandLink action="#{accessMB.logout()}" value="Logout" ajax="false"/><br/><br/>
+                            <p:clock autoSync="true"/>
+                        </h:form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="productContainer2">
+                <div class="proBox1">
+                    <h3>Product<span class="wel"> Zone </span></h3>
+                </div>
+                <div class="productzone">
+                    <h:form id="form">
+                        <p:panel header="Cart">
+                            <h:outputText value="#{shoppingCart.cartsize} #{shoppingCart.item} " id="cart"/>
+                            <p:commandButton value="View Cart" action="shopping_cart.xhtml"></p:commandButton>
+                        </p:panel>
+                        <p:dataGrid var="p" value="#{displayProductMB.allProduct}" columns="4" 
+                                    rows="10" paginator="true" id="p" paginatorTemplate="{CurrentPageReport} {FirstPageLink} 
+                                    {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}" 
+                                    rowsPerPageTemplate="6,12,16" >
+                            <f:facet name="header">
+                                <p:outputLabel value="All Products"/>
+                            </f:facet>
+                            <p:panel header="#{p.proName}">
+                                <h:panelGrid columns="1">
+                                    <h:graphicImage name="#{p.proUrl}" library="images" width="190px" height="150px"/>
+                                    <h:outputLabel value="Price: #{p.proPrice} Tk"/>
+                                    <p:commandButton action="#{shoppingCart.addtoCart(p)}" value="Add to Cart" ajax="false"/>
+                                </h:panelGrid>
+                                <p:commandLink update=":form:pro" oncomplete="PF('proDetails').show()" title="View Details">
+                                    <h:outputText value="View Details" styleClass="ui-icon ui-icon-search" />
+                                    <f:setPropertyActionListener value="#{p}" 
+                                                                 target="#{displayProductMB.selectedProduct}"/>
+                                </p:commandLink>
+                            </p:panel>
+                        </p:dataGrid>
+                        <p:dialog header="Product Info" widgetVar="proDetails" modal="true" 
+                                  showEffect="fade" hideEffect="fade" resizable="false">
+                            <p:outputPanel id="pro" >
+                                <p:panelGrid columns="2">
+                                    <f:facet name="header">
+                                        <h:graphicImage name="#{displayProductMB.selectedProduct.proUrl}" library="images" width="350px" height="250px"/>
+                                    </f:facet>
+                                    <h:outputText value="Price BDT"></h:outputText>
+                                    <h:outputText value="#{displayProductMB.selectedProduct.proPrice}"/>
+                                    <h:outputText value="Quantity Available"></h:outputText>
+                                    <h:outputText value="#{displayProductMB.selectedProduct.proQty}"/>
+                                    <h:outputText value="Description"></h:outputText>
+                                    <h:outputText value="#{displayProductMB.selectedProduct.proDesc}"/>
+                                </p:panelGrid>
+                            </p:outputPanel>
+                        </p:dialog>
+                    </h:form>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>PC - Payment</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <div id="headerZone">
+                <a href="home.xhtml"><div class="logo"></div></a>
+                <div class="box1">
+                    <h2>Type of Products</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Desktop</a></li>
+                            <li>- <a href="product.xhtml">Laptop</a></li>
+                            <li>- <a href="product.xhtml">Mobile &amp; Tablet</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box2">
+                    <h2>Computer Accessories</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Monitor</a></li>
+                            <li>- <a href="product.xhtml">Motherboard</a></li>
+                            <li>- <a href="product.xhtml">Mouse &amp; Keyboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box3">
+                    <h2>Help &amp; Support</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="service.xhtml">Service</a></li>
+                            <li>- <a href="contact.xhtml">Contact</a></li>  
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box4">
+                    <h2>Logout</h2>
+                    <div class="headerText">
+                        <h:form>
+                            <p:commandLink action="#{accessMB.logout()}" value="Logout" ajax="false"/><br/><br/>
+                            <p:clock autoSync="true"/>
+                        </h:form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="welcomeContainer">
+                <div class="welCome">
+                    <h1><span class="wel">Wel</span>come</h1>
+                    <div class="welText"> PC Computer Shop offers a wide range of PC products including Laptops, Desktops, Printers and Accessories. Whether it's basic Home computer, Business system or Gaming machine we can build it. ... Welcome to PC Computer Shop.<br />
+                        <br />
+                        PC Computers Shop is a retail chain of stores of computer products in Bangladesh. Launched in 2000. We have 11 branches in Bangladesh. </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="welPic"> </div>
+                <div class="clear"></div>
+            </div>
+            <div style="padding:20px 25px 10px 25px;">
+                <h1 class="inner">Payment Succeed</h1>
+                <div> <strong> <br />
+                        Your payment Tk. #{shoppingCart.total} has been successfully paid. <br />For any enquiry or any service help u can contact with us. <br/>Thank you.</strong><br />
+                    <br /><br /><br /><br /><br />
+                    <br />
+                    <br />
+                </div>
+                <div> <br />
+                    <h6 class="inner">Contact Information: </h6>
+                    <img src="images/photo-contact.jpg" alt="" width="152" height="100" class="project-img" /><br />
+                    100 Lorem Ipsum Dolor Sit<br />
+                    88-99 Sit Amet, Lorem<br />
+                    BANGLADESH<br />
+                    <br />
+                    <p> <span><img src="images/ico-phone.png" alt="" width="20" height="16" hspace="2" /> Phone:</span> (880) 123 456 789<br />
+                        <span><img src="images/ico-fax.png" alt="" width="20" height="16" hspace="2" /> Fax:</span> (880) 987 654 321<br />
+                        <span><img src="images/ico-website.png" alt="" width="20" height="16" hspace="2" /> Website:</span> <a href="#">www.pccomputershop.com</a><br />
+                        <span><img src="images/ico-email.png" alt="" width="20" height="16" hspace="2" /> Email:</span> <a href="contact.xhtml">info@pccomputershop.com</a><br />
+                        <span><img src="images/ico-twitter.png" alt="" width="20" height="16" hspace="3" /> <a href="#">Follow</a> on Twitter</span><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerMenu">
+                <ul style="color:#FFF;">
+                    &copy; Copyright PC Computer Shop. All rights reserved. Design by Stylish <a href="#" style="color:#FFF; text-decoration:underline;">PC Computer Shop</a>.
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </h:body>
+</html>
+

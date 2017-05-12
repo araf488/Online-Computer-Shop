@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>PC - Login</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <div id="headerZone">
+                <a href="index.xhtml"><div class="logo"></div></a>
+                <div class="box1">
+                    <h2>Type of Products</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Desktop</a></li>
+                            <li>- <a href="product.xhtml">Laptop</a></li>
+                            <li>- <a href="product.xhtml">Mobile &amp; Tablet</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box2">
+                    <h2>Computer Accessories</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="product.xhtml">Monitor</a></li>
+                            <li>- <a href="product.xhtml">Motherboard</a></li>
+                            <li>- <a href="product.xhtml">Mouse &amp; Keyboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box3">
+                    <h2>Help &amp; Support</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="service.xhtml">Service</a></li>
+                            <li>- <a href="contact.xhtml">Contact</a></li>  
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box4">
+                    <h2>Sign-In</h2>
+                    <div class="headerText">
+                        <ul>
+                            <li>- <a href="login.xhtml">Login</a></li>
+                            <li>- <a href="register.xhtml">Register</a></li>
+                            <li>- <a href="admin.xhtml">Admin Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="productContainer2">
+                <div class="proBox1">
+                    <center><h3>Login<span class="wel"> here </span></h3></center>
+                </div>
+                <div class="productzone">
+                    <div> <br />
+                        <center>
+                            <br />
+                            <br />
+                            <h:form>
+                                <p:messages id="msg" closable="true" showDetail="true"></p:messages>
+                                <table width="80%">
+                                    <tr>
+                                        <td width="145" align="left" valign="top" class="body" id="Company"><strong>User Name:</strong></td>
+                                        <td width="280" align="left" valign="top"><p:inputText type="text" size="40" placeholder="User Name" value="#{accessMB.user.userName}" required="true" requiredMessage="Username can't be empty"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" valign="top" class="body" id="Contact"><strong>Email:</strong></td>
+                                        <td align="left" valign="top"><p:inputText type="email" size="40" placeholder="Email" value="#{accessMB.user.email}" required="true" requiredMessage="Email can't be empty" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" valign="top" class="body" id="Address"><strong>Password: </strong></td>
+                                        <td align="left" valign="top"><p:inputText type="password" size="40" placeholder="Password" value="#{accessMB.user.password}" required="true" requiredMessage="Password can't be empty"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><p:commandButton type="submit" action="#{accessMB.login()}" value="Login" ajax="false" update="msg"/></td>
+                                    </tr>
+                                </table>
+                            </h:form>
+                        </center>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div style="padding:20px 25px 10px 25px;">
+                <div> <br />
+                    <br />
+                    <br />
+                    <h6 class="inner">Contact Information: </h6>
+                    <img src="images/photo-contact.jpg" alt="" width="152" height="100" class="project-img" /><br />
+                    100 Lorem Ipsum Dolor Sit<br />
+                    88-99 Sit Amet, Lorem<br />
+                    BANGLADESH<br />
+                    <br />
+                    <p> <span><img src="images/ico-phone.png" alt="" width="20" height="16" hspace="2" /> Phone:</span> (880) 123 456 789<br />
+                        <span><img src="images/ico-fax.png" alt="" width="20" height="16" hspace="2" /> Fax:</span> (880) 987 654 321<br />
+                        <span><img src="images/ico-website.png" alt="" width="20" height="16" hspace="2" /> Website:</span> <a href="#">www.pccomputershop.com</a><br />
+                        <span><img src="images/ico-email.png" alt="" width="20" height="16" hspace="2" /> Email:</span> <a href="#">info@pccomputershop.com</a><br />
+                        <span><img src="images/ico-twitter.png" alt="" width="20" height="16" hspace="3" /> <a href="#">Follow</a> on Twitter</span><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerMenu">
+                <ul style="color:#FFF;">
+                    &copy; Copyright PC Computer Shop. All rights reserved. Design by Stylish <a href="#" style="color:#FFF; text-decoration:underline;">PC Computer Shop</a>.
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </h:body>
+</html>
+
